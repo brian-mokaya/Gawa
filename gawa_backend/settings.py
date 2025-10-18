@@ -201,6 +201,7 @@ SPECTACULAR_SETTINGS = {
         {'name': 'Expenses', 'description': 'Create and manage shared expenses'},
         {'name': 'Payments', 'description': 'STK Push payments and tracking'},
         {'name': 'Smart Split', 'description': 'AI-powered expense splitting suggestions'},
+        {'name': 'Testing', 'description': 'Test/simulate payment flows without real money'},
         {'name': 'Webhooks', 'description': 'PayHero payment callbacks'},
     ],
 }

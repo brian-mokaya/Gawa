@@ -862,6 +862,212 @@ def smart_split(request):
 
 
 # ============================================================================
+# Test/Simulation Views
+# ============================================================================
+
+@extend_schema(
+    request={
+        'type': 'object',
+        'properties': {
+            'payment_id': {'type': 'integer', 'description': 'Payment ID to simulate'},
+            'result_code': {'type': 'integer', 'description': '0 = success, 1 = failed', 'default': 0},
+        }
+    },
+    responses={200: {'type': 'object'}},
+    tags=['Testing'],
+)
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def simulate_stk_push(request):
+    """
+    Simulate M-Pesa STK Push payment completion for testing
+    
+    This endpoint simulates what happens when a user completes payment on their phone.
+    Use this for testing the entire payment flow without real money.
+    """
+    payment_id = request.data.get('payment_id')
+    result_code = request.data.get('result_code', 0)  # 0 = success, 1 = failed
+    
+    if not payment_id:
+        return Response({
+            'success': False,
+            'message': 'payment_id is required'
+        }, status=status.HTTP_400_BAD_REQUEST)
+    
+    try:
+        payment = Payment.objects.get(id=payment_id)
+    except Payment.DoesNotExist:
+        return Response({
+            'success': False,
+            'message': 'Payment not found'
+        }, status=status.HTTP_404_NOT_FOUND)
+    
+    # Simulate webhook payload
+    simulated_webhook = {
+        "forward_url": "",
+        "response": {
+            "Amount": float(payment.amount),
+            "CheckoutRequestID": payment.payhero_transaction_id or f"TEST_CO_{payment.id}",
+            "ExternalReference": f"EXP-{payment.expense.id}-PAY-{payment.id}",
+            "MerchantRequestID": f"TEST-MERCHANT-{payment.id}",
+            "MpesaReceiptNumber": f"TEST{payment.id}ABC" if result_code == 0 else "",
+            "Phone": payment.payer.phone_number,
+            "ResultCode": result_code,
+            "ResultDesc": "The service request is processed successfully." if result_code == 0 else "Payment failed",
+            "Status": "Success" if result_code == 0 else "Failed"
+        },
+        "status": result_code == 0
+    }
+    
+    # Process the simulated webhook
+    payhero_service = get_payhero_service()
+    result = payhero_service.process_webhook(simulated_webhook)
+    
+    # Return detailed response
+    payment.refresh_from_db()
+    
+    return Response({
+        'success': True,
+        'message': 'STK Push simulated successfully',
+        'simulation': {
+            'payment_id': payment.id,
+            'result': 'Success' if result_code == 0 else 'Failed',
+            'amount': float(payment.amount),
+            'payer': payment.payer.name,
+            'new_status': payment.status,
+        },
+        'webhook_result': result,
+        'payment_details': {
+            'id': payment.id,
+            'amount': float(payment.amount),
+            'status': payment.status,
+            'transaction_id': payment.transaction_id,
+            'completed_at': payment.completed_at,
+        },
+        'updated_balances': result.get('updated_balances', {}),
+    }, status=status.HTTP_200_OK)
+
+
+@extend_schema(
+    request={
+        'type': 'object',
+        'properties': {
+            'expense_id': {'type': 'integer', 'description': 'Expense ID'},
+            'auto_complete': {'type': 'boolean', 'description': 'Auto-complete all payments', 'default': True},
+        }
+    },
+    responses={200: {'type': 'object'}},
+    tags=['Testing'],
+)
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def simulate_expense_payments(request):
+    """
+    Simulate full payment flow for an expense (testing only)
+    
+    This endpoint:
+    1. Creates payment records for all participants
+    2. Initiates STK push (test mode)
+    3. Optionally auto-completes all payments
+    4. Returns summary of simulated payments
+    """
+    expense_id = request.data.get('expense_id')
+    auto_complete = request.data.get('auto_complete', True)
+    
+    if not expense_id:
+        return Response({
+            'success': False,
+            'message': 'expense_id is required'
+        }, status=status.HTTP_400_BAD_REQUEST)
+    
+    try:
+        expense = Expense.objects.get(id=expense_id)
+    except Expense.DoesNotExist:
+        return Response({
+            'success': False,
+            'message': 'Expense not found'
+        }, status=status.HTTP_404_NOT_FOUND)
+    
+    expense_participants = ExpenseParticipant.objects.filter(expense=expense)
+    payhero_service = get_payhero_service()
+    
+    simulated_payments = []
+    
+    for ep in expense_participants:
+        # Skip the person who paid
+        if ep.user == expense.paid_by:
+            continue
+        
+        # Create or get payment
+        payment, created = Payment.objects.get_or_create(
+            expense_participant=ep,
+            defaults={
+                'expense': expense,
+                'payer': ep.user,
+                'payee': expense.paid_by,
+                'amount': ep.amount_owed,
+                'status': 'pending',
+            }
+        )
+        
+        # Initiate STK push (test mode)
+        result = payhero_service.initiate_stk_push(
+            phone_number=ep.user.phone_number,
+            amount=float(ep.amount_owed),
+            payment_id=payment.id,
+            external_reference=f"EXP-{expense.id}-PAY-{payment.id}",
+            customer_name=ep.user.name
+        )
+        
+        payment.status = 'initiated'
+        payment.payhero_transaction_id = result.get('checkout_request_id')
+        payment.save()
+        
+        # Auto-complete if requested
+        if auto_complete:
+            simulated_webhook = {
+                "response": {
+                    "Amount": float(ep.amount_owed),
+                    "CheckoutRequestID": payment.payhero_transaction_id,
+                    "ExternalReference": f"EXP-{expense.id}-PAY-{payment.id}",
+                    "MpesaReceiptNumber": f"SIM{payment.id}TEST",
+                    "Phone": ep.user.phone_number,
+                    "ResultCode": 0,
+                    "ResultDesc": "Simulated payment completed",
+                    "Status": "Success"
+                },
+                "status": True
+            }
+            payhero_service.process_webhook(simulated_webhook)
+            payment.refresh_from_db()
+        
+        simulated_payments.append({
+            'payment_id': payment.id,
+            'payer': ep.user.name,
+            'phone': ep.user.phone_number,
+            'amount': float(ep.amount_owed),
+            'status': payment.status,
+            'transaction_id': payment.transaction_id if auto_complete else None,
+        })
+    
+    # Get updated expense info
+    expense.refresh_from_db()
+    
+    return Response({
+        'success': True,
+        'message': f'Simulated {len(simulated_payments)} payments',
+        'expense': {
+            'id': expense.id,
+            'title': expense.title,
+            'total_amount': float(expense.total_amount),
+            'settled': expense.settled,
+        },
+        'simulated_payments': simulated_payments,
+        'auto_completed': auto_complete,
+    }, status=status.HTTP_200_OK)
+
+
+# ============================================================================
 # Webhook Views
 # ============================================================================
 

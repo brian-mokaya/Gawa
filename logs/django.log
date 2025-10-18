@@ -696,3 +696,63 @@ ERROR 2025-10-18 14:03:50,718 basehttp 21020 2300 "POST /api/expenses/ HTTP/1.1"
 WARNING 2025-10-18 14:06:49,857 log 21020 2300 Bad Request: /api/expenses/
 WARNING 2025-10-18 14:06:49,858 basehttp 21020 2300 "POST /api/expenses/ HTTP/1.1" 400 73
 INFO 2025-10-18 14:07:02,600 basehttp 21020 2300 "POST /api/expenses/ HTTP/1.1" 201 966
+INFO 2025-10-18 14:12:24,360 autoreload 22944 23404 Watching for file changes with StatReloader
+INFO 2025-10-18 14:16:54,450 basehttp 22944 19160 "GET /api/docs/ HTTP/1.1" 200 4722
+INFO 2025-10-18 14:16:55,406 basehttp 22944 19160 "GET /api/schema/ HTTP/1.1" 200 84006
+WARNING 2025-10-18 14:18:12,770 log 22944 19160 Forbidden: /api/auth/login/
+WARNING 2025-10-18 14:18:12,773 basehttp 22944 19160 "POST /api/auth/login/ HTTP/1.1" 403 42
+INFO 2025-10-18 14:31:05,891 basehttp 22944 19252 "GET /api/docs/ HTTP/1.1" 200 4722
+INFO 2025-10-18 14:31:06,507 basehttp 22944 19252 "GET /api/schema/ HTTP/1.1" 200 84006
+WARNING 2025-10-18 14:31:39,131 log 22944 19252 Forbidden: /api/users/me/
+WARNING 2025-10-18 14:31:39,134 basehttp 22944 19252 "GET /api/users/me/ HTTP/1.1" 403 42
+INFO 2025-10-18 14:32:19,988 basehttp 22944 19252 "POST /api/auth/login/ HTTP/1.1" 200 897
+INFO 2025-10-18 14:32:45,787 basehttp 22944 19252 "GET /api/users/me/ HTTP/1.1" 200 355
+INFO 2025-10-18 14:52:29,528 autoreload 25116 2360 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 14:52:30,389 autoreload 26576 10208 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 14:52:30,356 autoreload 22944 23404 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 14:52:30,718 autoreload 3172 22592 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 14:52:30,843 autoreload 25716 19068 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 14:52:40,539 autoreload 25672 21000 Watching for file changes with StatReloader
+INFO 2025-10-18 14:52:43,994 autoreload 2876 20992 Watching for file changes with StatReloader
+INFO 2025-10-18 14:52:45,681 autoreload 27036 24264 Watching for file changes with StatReloader
+INFO 2025-10-18 14:52:46,312 autoreload 5848 25040 Watching for file changes with StatReloader
+INFO 2025-10-18 14:52:46,952 autoreload 26328 21608 Watching for file changes with StatReloader
+INFO 2025-10-18 14:52:56,410 autoreload 17200 16544 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:52:56,644 autoreload 1540 20692 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:52:56,643 autoreload 9536 10128 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:52:56,659 autoreload 10444 22880 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:52:56,806 autoreload 18132 20168 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:52:57,052 autoreload 25360 16288 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:53:04,456 autoreload 25672 21000 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:53:04,966 autoreload 13136 16212 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:06,058 autoreload 10920 27872 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:07,633 autoreload 28096 18192 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:07,683 autoreload 19784 6308 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:07,933 autoreload 24412 18644 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:09,745 autoreload 27036 24264 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\urls.py changed, reloading.
+INFO 2025-10-18 14:53:10,742 autoreload 25000 16552 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:11,404 autoreload 2876 20992 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 14:53:11,759 autoreload 5848 25040 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\urls.py changed, reloading.
+INFO 2025-10-18 14:53:13,651 autoreload 26328 21608 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\urls.py changed, reloading.
+INFO 2025-10-18 14:53:17,473 autoreload 6492 10332 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:20,089 autoreload 14236 26916 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:21,141 autoreload 20020 19444 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:21,448 autoreload 15484 21132 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:24,117 autoreload 28616 19312 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:33,275 autoreload 10920 27872 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:53:33,293 autoreload 13136 16212 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:53:33,588 autoreload 19784 6308 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:53:33,775 autoreload 28096 18192 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:53:33,897 autoreload 25000 16552 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:53:34,084 autoreload 14236 26916 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 14:53:34,133 autoreload 24412 18644 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 14:53:34,516 autoreload 6492 10332 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\urls.py changed, reloading.
+INFO 2025-10-18 14:53:38,662 autoreload 20020 19444 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 14:53:42,045 autoreload 24820 27420 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:43,108 autoreload 15484 21132 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\urls.py changed, reloading.
+INFO 2025-10-18 14:53:43,258 autoreload 22380 19488 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:43,926 autoreload 28616 19312 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 14:53:44,166 autoreload 28512 20012 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:44,211 autoreload 25004 1896 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:44,427 autoreload 23452 23872 Watching for file changes with StatReloader
+INFO 2025-10-18 14:53:44,704 autoreload 6864 12516 Watching for file changes with StatReloader

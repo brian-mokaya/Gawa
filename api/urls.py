@@ -23,6 +23,10 @@ urlpatterns = [
     # Smart split endpoint
     path('ai/smart-split/', views.smart_split, name='smart-split'),
     
+    # Test/Simulation endpoints
+    path('test/simulate-stk-push/', views.simulate_stk_push, name='simulate-stk-push'),
+    path('test/simulate-expense-payments/', views.simulate_expense_payments, name='simulate-expense-payments'),
+    
     # Webhook endpoint
     path('payhero/webhook/', views.payhero_webhook, name='payhero-webhook'),
 ]

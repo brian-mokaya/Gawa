@@ -1,0 +1,63 @@
+===============================================
+PAYHERO CONFIGURATION FOR .env FILE
+===============================================
+
+Create a file named ".env" in your project root (C:\Users\Mokaya\Downloads\GitHub\Gawa\)
+and add the following content:
+
+-----------------------------------------------
+
+# Django Settings
+DEBUG=True
+SECRET_KEY=django-insecure-change-this-in-production-123456789
+
+# PayHero Configuration (Decoded from your Basic Auth token)
+PAYHERO_API_KEY=uvL70uDjoPNu5LYM9lu6
+PAYHERO_API_SECRET=UqpTUqJCHLf7M8vU1Mkp7eTiKpJB8GMsAzSmU1fK
+PAYHERO_BASE_URL=https://backend.payhero.co.ke
+PAYHERO_CHANNEL_ID=YOUR_CHANNEL_ID_HERE
+PAYHERO_PROVIDER=m-pesa
+PAYHERO_NETWORK_CODE=63902
+PAYHERO_CALLBACK_URL=http://localhost:8000/api/payhero/webhook/
+
+# CORS Settings
+CORS_ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+
+-----------------------------------------------
+
+IMPORTANT NEXT STEPS:
+
+1. Create .env file:
+   - Right-click in project root folder
+   - New > Text Document
+   - Name it ".env" (no .txt extension)
+   
+2. Copy the configuration above into .env
+
+3. Get your PayHero Channel ID:
+   - Login to PayHero dashboard
+   - Go to "Payment Channels" > "My Payment Channels"
+   - Copy your Channel ID (e.g., 133, 911, etc.)
+   - Replace "YOUR_CHANNEL_ID_HERE" in .env with your actual Channel ID
+
+4. Restart your Django server:
+   - Stop current server (Ctrl+C)
+   - Run: python manage.py runserver
+
+5. Test STK Push:
+   - Your PayHero is now configured!
+   - Create an expense with auto_initiate_payments=true
+   - Real STK push will be sent to users' phones!
+
+===============================================
+DECODED CREDENTIALS FROM YOUR TOKEN:
+===============================================
+
+Your PayHero Basic Auth token decoded to:
+- API Key: uvL70uDjoPNu5LYM9lu6
+- API Secret: UqpTUqJCHLf7M8vU1Mkp7eTiKpJB8GMsAzSmU1fK
+
+These are already added to the configuration above.
+
+===============================================
+
