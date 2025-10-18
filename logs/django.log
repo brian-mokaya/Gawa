@@ -1,0 +1,698 @@
+INFO 2025-10-18 12:17:47,853 autoreload 14116 18180 Watching for file changes with StatReloader
+WARNING 2025-10-18 12:17:59,796 log 14116 22192 Not Found: /
+WARNING 2025-10-18 12:17:59,797 basehttp 14116 22192 "GET / HTTP/1.1" 404 2169
+WARNING 2025-10-18 12:17:59,980 log 14116 22192 Not Found: /favicon.ico
+WARNING 2025-10-18 12:17:59,982 basehttp 14116 22192 "GET /favicon.ico HTTP/1.1" 404 2220
+INFO 2025-10-18 12:31:43,735 autoreload 25220 22416 Watching for file changes with StatReloader
+WARNING 2025-10-18 12:31:49,256 log 25220 19768 Not Found: /
+WARNING 2025-10-18 12:31:49,258 basehttp 25220 19768 "GET / HTTP/1.1" 404 2547
+INFO 2025-10-18 12:31:57,320 basehttp 25220 19768 "GET /api/docs HTTP/1.1" 301 0
+ERROR 2025-10-18 12:31:57,430 log 25220 12316 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\api\auth.py", line 16, in authenticate
+    auth = self.get_authorization_header(request).split()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SupabaseJWTAuthentication' object has no attribute 'get_authorization_header'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 231, in user
+    with wrap_attributeerrors():
+         ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 78, in wrap_attributeerrors
+    raise exc.with_traceback(info[2])
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\api\auth.py", line 16, in authenticate
+    auth = self.get_authorization_header(request).split()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rest_framework.request.WrappedAttributeError: 'SupabaseJWTAuthentication' object has no attribute 'get_authorization_header'
+ERROR 2025-10-18 12:31:57,442 basehttp 25220 12316 "GET /api/docs/ HTTP/1.1" 500 148625
+ERROR 2025-10-18 12:32:16,867 log 25220 12316 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\api\auth.py", line 16, in authenticate
+    auth = self.get_authorization_header(request).split()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SupabaseJWTAuthentication' object has no attribute 'get_authorization_header'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 231, in user
+    with wrap_attributeerrors():
+         ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 78, in wrap_attributeerrors
+    raise exc.with_traceback(info[2])
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\api\auth.py", line 16, in authenticate
+    auth = self.get_authorization_header(request).split()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rest_framework.request.WrappedAttributeError: 'SupabaseJWTAuthentication' object has no attribute 'get_authorization_header'
+ERROR 2025-10-18 12:32:16,876 basehttp 25220 12316 "GET /api/docs/ HTTP/1.1" 500 148762
+INFO 2025-10-18 12:32:34,307 autoreload 25184 13884 Watching for file changes with StatReloader
+ERROR 2025-10-18 12:32:39,506 log 25184 26368 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\api\auth.py", line 16, in authenticate
+    auth = self.get_authorization_header(request).split()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SupabaseJWTAuthentication' object has no attribute 'get_authorization_header'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 420, in initial
+    self.perform_authentication(request)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 330, in perform_authentication
+    request.user
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 231, in user
+    with wrap_attributeerrors():
+         ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 78, in wrap_attributeerrors
+    raise exc.with_traceback(info[2])
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 232, in user
+    self._authenticate()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\api\auth.py", line 16, in authenticate
+    auth = self.get_authorization_header(request).split()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rest_framework.request.WrappedAttributeError: 'SupabaseJWTAuthentication' object has no attribute 'get_authorization_header'
+ERROR 2025-10-18 12:32:39,516 basehttp 25184 26368 "GET /api/docs/ HTTP/1.1" 500 148762
+INFO 2025-10-18 12:33:43,557 autoreload 25184 13884 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\auth.py changed, reloading.
+INFO 2025-10-18 12:33:46,584 autoreload 21788 7004 Watching for file changes with StatReloader
+INFO 2025-10-18 12:34:53,584 autoreload 26588 1432 Watching for file changes with StatReloader
+INFO 2025-10-18 12:42:10,791 autoreload 26588 1432 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\auth.py changed, reloading.
+INFO 2025-10-18 12:42:16,198 autoreload 18264 25684 Watching for file changes with StatReloader
+INFO 2025-10-18 12:42:27,568 basehttp 18264 9060 "GET /api/docs/ HTTP/1.1" 200 4640
+INFO 2025-10-18 12:42:29,146 basehttp 18264 9060 "GET /api/schema/ HTTP/1.1" 200 79070
+INFO 2025-10-18 12:46:57,468 basehttp 18264 9060 "GET /api/docs/ HTTP/1.1" 200 4640
+INFO 2025-10-18 12:46:57,914 basehttp 18264 9060 "GET /api/schema/ HTTP/1.1" 200 79070
+INFO 2025-10-18 12:47:10,252 autoreload 11316 26372 Watching for file changes with StatReloader
+INFO 2025-10-18 12:47:12,732 basehttp 11316 1448 "GET /api/docs/ HTTP/1.1" 200 4640
+INFO 2025-10-18 12:47:12,985 basehttp 11316 1448 "GET /api/schema/ HTTP/1.1" 200 79070
+WARNING 2025-10-18 12:47:39,252 log 11316 1448 Bad Request: /api/auth/register/
+WARNING 2025-10-18 12:47:39,270 basehttp 11316 1448 "POST /api/auth/register/ HTTP/1.1" 400 90
+INFO 2025-10-18 12:50:42,865 autoreload 24480 11696 Watching for file changes with StatReloader
+INFO 2025-10-18 12:50:46,094 basehttp 24480 19824 "GET /api/docs/ HTTP/1.1" 200 4640
+INFO 2025-10-18 12:50:46,600 basehttp 24480 19824 "GET /api/schema/ HTTP/1.1" 200 95618
+WARNING 2025-10-18 12:51:31,636 log 24480 19824 Bad Request: /api/auth/register/
+WARNING 2025-10-18 12:51:31,637 basehttp 24480 19824 "POST /api/auth/register/ HTTP/1.1" 400 62
+INFO 2025-10-18 12:52:18,028 autoreload 24480 11696 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\auth.py changed, reloading.
+INFO 2025-10-18 12:52:20,534 autoreload 21332 21740 Watching for file changes with StatReloader
+INFO 2025-10-18 12:53:42,095 autoreload 2456 22564 Watching for file changes with StatReloader
+INFO 2025-10-18 12:54:13,449 autoreload 11632 13512 Watching for file changes with StatReloader
+INFO 2025-10-18 12:54:16,786 basehttp 11632 5736 "GET /api/docs/ HTTP/1.1" 200 4640
+INFO 2025-10-18 12:54:17,389 basehttp 11632 5736 "GET /api/schema/ HTTP/1.1" 200 99937
+WARNING 2025-10-18 12:54:59,446 log 11632 5736 Bad Request: /api/auth/register/
+WARNING 2025-10-18 12:54:59,448 basehttp 11632 5736 "POST /api/auth/register/ HTTP/1.1" 400 62
+INFO 2025-10-18 12:56:00,077 autoreload 11632 13512 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 12:56:03,600 autoreload 17640 24076 Watching for file changes with StatReloader
+INFO 2025-10-18 12:56:23,111 autoreload 17640 24076 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\payhero_service.py changed, reloading.
+INFO 2025-10-18 12:56:25,397 autoreload 24676 22748 Watching for file changes with StatReloader
+INFO 2025-10-18 12:56:38,824 autoreload 17404 25764 Watching for file changes with StatReloader
+INFO 2025-10-18 12:56:40,580 autoreload 24676 22748 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\payhero_service.py changed, reloading.
+INFO 2025-10-18 12:56:42,931 autoreload 25672 12920 Watching for file changes with StatReloader
+INFO 2025-10-18 12:57:03,353 autoreload 25672 12920 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 12:57:04,932 autoreload 18764 10684 Watching for file changes with StatReloader
+INFO 2025-10-18 12:57:20,056 autoreload 11512 25652 Watching for file changes with StatReloader
+INFO 2025-10-18 12:57:22,863 basehttp 11512 23976 "GET /api/docs/ HTTP/1.1" 200 4640
+INFO 2025-10-18 12:57:23,342 basehttp 11512 23976 "GET /api/schema/ HTTP/1.1" 200 99937
+INFO 2025-10-18 12:57:28,619 basehttp 11512 23976 "POST /api/auth/register/ HTTP/1.1" 201 346
+WARNING 2025-10-18 12:59:51,342 log 11512 23976 Unsupported Media Type: /api/auth/login/
+WARNING 2025-10-18 12:59:51,343 basehttp 11512 23976 "POST /api/auth/login/ HTTP/1.1" 415 56
+INFO 2025-10-18 13:00:38,759 autoreload 11512 25652 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\serializers.py changed, reloading.
+INFO 2025-10-18 13:00:42,007 autoreload 9936 12056 Watching for file changes with StatReloader
+INFO 2025-10-18 13:01:06,634 autoreload 9936 12056 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:01:08,561 autoreload 21848 22588 Watching for file changes with StatReloader
+INFO 2025-10-18 13:01:13,843 autoreload 21848 22588 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:01:16,578 autoreload 4040 3496 Watching for file changes with StatReloader
+INFO 2025-10-18 13:02:31,529 autoreload 4040 3496 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:02:34,571 autoreload 25388 20952 Watching for file changes with StatReloader
+INFO 2025-10-18 13:03:23,671 autoreload 21688 18096 Watching for file changes with StatReloader
+WARNING 2025-10-18 13:03:56,971 log 25388 22720 Unauthorized: /api/auth/login/
+WARNING 2025-10-18 13:03:56,973 basehttp 25388 22720 "POST /api/auth/login/ HTTP/1.1" 401 68
+INFO 2025-10-18 13:04:04,296 basehttp 25388 22720 - Broken pipe from ('127.0.0.1', 2219)
+INFO 2025-10-18 13:04:20,582 autoreload 21688 18096 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:04:20,845 autoreload 17404 25764 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:04:21,312 autoreload 25388 20952 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:04:21,379 autoreload 2456 22564 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:04:23,198 autoreload 20524 10444 Watching for file changes with StatReloader
+INFO 2025-10-18 13:04:23,502 autoreload 20000 23976 Watching for file changes with StatReloader
+INFO 2025-10-18 13:04:24,906 autoreload 23724 13928 Watching for file changes with StatReloader
+INFO 2025-10-18 13:04:44,047 autoreload 7544 23812 Watching for file changes with StatReloader
+WARNING 2025-10-18 13:05:50,731 log 23724 20824 Bad Request: /api/auth/register/
+WARNING 2025-10-18 13:05:50,733 basehttp 23724 20824 "POST /api/auth/register/ HTTP/1.1" 400 74
+INFO 2025-10-18 13:05:56,036 basehttp 23724 20824 - Broken pipe from ('127.0.0.1', 1447)
+INFO 2025-10-18 13:06:33,388 basehttp 23724 10684 "GET /api/docs/ HTTP/1.1" 200 4641
+INFO 2025-10-18 13:06:39,773 basehttp 23724 10684 - Broken pipe from ('127.0.0.1', 1475)
+INFO 2025-10-18 13:07:02,936 basehttp 23724 17724 "GET /api/schema/ HTTP/1.1" 200 46638
+INFO 2025-10-18 13:07:08,766 basehttp 23724 17724 - Broken pipe from ('127.0.0.1', 3775)
+WARNING 2025-10-18 13:07:31,776 log 23724 23840 Unauthorized: /api/auth/login/
+WARNING 2025-10-18 13:07:31,777 basehttp 23724 23840 "POST /api/auth/login/ HTTP/1.1" 401 68
+INFO 2025-10-18 13:07:37,013 basehttp 23724 23840 - Broken pipe from ('127.0.0.1', 4006)
+INFO 2025-10-18 13:07:48,692 autoreload 20524 10444 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:07:49,017 autoreload 23724 13928 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:07:49,141 autoreload 20000 23976 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:07:49,474 autoreload 7544 23812 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:07:51,443 autoreload 4732 26096 Watching for file changes with StatReloader
+INFO 2025-10-18 13:07:51,644 autoreload 24920 12852 Watching for file changes with StatReloader
+INFO 2025-10-18 13:07:52,447 autoreload 25684 24756 Watching for file changes with StatReloader
+INFO 2025-10-18 13:07:53,090 autoreload 26304 19160 Watching for file changes with StatReloader
+INFO 2025-10-18 13:08:01,592 autoreload 9088 24168 Watching for file changes with StatReloader
+INFO 2025-10-18 13:08:04,145 basehttp 9088 21836 "GET /api/docs/ HTTP/1.1" 200 4641
+INFO 2025-10-18 13:08:04,852 basehttp 9088 21836 "GET /api/schema/ HTTP/1.1" 200 100015
+WARNING 2025-10-18 13:08:22,388 log 9088 21836 Unsupported Media Type: /api/auth/login/
+WARNING 2025-10-18 13:08:22,389 basehttp 9088 21836 "POST /api/auth/login/ HTTP/1.1" 415 56
+INFO 2025-10-18 13:11:43,534 autoreload 17964 18264 Watching for file changes with StatReloader
+INFO 2025-10-18 13:11:48,771 basehttp 9088 19768 "GET /api/schema/ HTTP/1.1" 200 46638
+INFO 2025-10-18 13:11:53,806 basehttp 9088 19768 - Broken pipe from ('127.0.0.1', 2403)
+INFO 2025-10-18 13:13:07,734 autoreload 9088 24168 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\serializers.py changed, reloading.
+INFO 2025-10-18 13:13:11,074 autoreload 17352 976 Watching for file changes with StatReloader
+INFO 2025-10-18 13:14:29,009 autoreload 17352 976 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:14:33,131 autoreload 16980 10300 Watching for file changes with StatReloader
+INFO 2025-10-18 13:15:14,598 autoreload 16980 10300 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:15:18,391 autoreload 14008 1072 Watching for file changes with StatReloader
+INFO 2025-10-18 13:15:38,685 autoreload 14008 1072 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:15:41,291 autoreload 20056 8924 Watching for file changes with StatReloader
+INFO 2025-10-18 13:15:52,006 autoreload 20056 8924 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:15:55,750 autoreload 16180 16824 Watching for file changes with StatReloader
+INFO 2025-10-18 13:16:08,671 autoreload 26304 17080 Watching for file changes with StatReloader
+INFO 2025-10-18 13:16:17,040 basehttp 16180 22312 "GET /api/schema/ HTTP/1.1" 200 46408
+INFO 2025-10-18 13:16:21,180 basehttp 16180 22312 - Broken pipe from ('127.0.0.1', 9225)
+WARNING 2025-10-18 13:16:36,864 log 16180 16556 Unauthorized: /api/auth/login/
+WARNING 2025-10-18 13:16:36,865 basehttp 16180 16556 "POST /api/auth/login/ HTTP/1.1" 401 68
+INFO 2025-10-18 13:16:40,654 basehttp 16180 16556 - Broken pipe from ('127.0.0.1', 9230)
+INFO 2025-10-18 13:16:59,239 autoreload 16180 16824 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\serializers.py changed, reloading.
+INFO 2025-10-18 13:17:01,756 autoreload 25100 24840 Watching for file changes with StatReloader
+INFO 2025-10-18 13:17:07,332 basehttp 25100 19608 "GET /api/docs/ HTTP/1.1" 200 4641
+INFO 2025-10-18 13:17:07,888 basehttp 25100 19608 "GET /api/schema/ HTTP/1.1" 200 99294
+INFO 2025-10-18 13:17:38,105 basehttp 25100 19608 "POST /api/auth/register/ HTTP/1.1" 201 337
+INFO 2025-10-18 13:17:49,004 basehttp 25100 19608 "POST /api/auth/login/ HTTP/1.1" 200 430
+INFO 2025-10-18 13:19:16,303 autoreload 24920 12852 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:19:16,561 autoreload 25100 24840 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:19:16,923 autoreload 26304 17080 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:19:16,928 autoreload 25684 24756 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:19:16,951 autoreload 4732 26096 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:19:16,993 autoreload 17964 18264 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:19:19,797 autoreload 10684 25716 Watching for file changes with StatReloader
+INFO 2025-10-18 13:19:20,301 autoreload 3244 13928 Watching for file changes with StatReloader
+INFO 2025-10-18 13:19:20,512 autoreload 18812 24764 Watching for file changes with StatReloader
+INFO 2025-10-18 13:19:21,118 autoreload 19448 22992 Watching for file changes with StatReloader
+INFO 2025-10-18 13:19:21,233 autoreload 21980 11384 Watching for file changes with StatReloader
+INFO 2025-10-18 13:19:26,223 autoreload 14636 1896 Watching for file changes with StatReloader
+INFO 2025-10-18 13:19:38,767 autoreload 10684 25716 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:19:38,889 autoreload 3244 13928 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:19:38,989 autoreload 18812 24764 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:19:39,135 autoreload 14636 1896 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:19:39,449 autoreload 19448 22992 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:19:39,754 autoreload 21980 11384 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:19:41,556 autoreload 24164 7508 Watching for file changes with StatReloader
+INFO 2025-10-18 13:19:41,612 autoreload 1888 14112 Watching for file changes with StatReloader
+INFO 2025-10-18 13:19:41,700 autoreload 18508 10740 Watching for file changes with StatReloader
+INFO 2025-10-18 13:19:41,774 autoreload 20168 25836 Watching for file changes with StatReloader
+INFO 2025-10-18 13:19:42,326 autoreload 20024 17572 Watching for file changes with StatReloader
+INFO 2025-10-18 13:19:43,438 autoreload 8924 21476 Watching for file changes with StatReloader
+INFO 2025-10-18 13:19:59,510 autoreload 24812 23096 Watching for file changes with StatReloader
+INFO 2025-10-18 13:20:09,477 basehttp 24812 22176 "POST /api/auth/register/ HTTP/1.1" 201 337
+INFO 2025-10-18 13:20:14,247 basehttp 24812 22176 "POST /api/auth/login/ HTTP/1.1" 200 430
+INFO 2025-10-18 13:20:48,455 basehttp 24812 22176 "GET /admin HTTP/1.1" 301 0
+INFO 2025-10-18 13:20:48,511 basehttp 24812 24188 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-18 13:20:48,592 basehttp 24812 24188 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4158
+INFO 2025-10-18 13:20:49,376 basehttp 24812 24188 "GET /static/admin/css/base.css HTTP/1.1" 200 21544
+INFO 2025-10-18 13:20:49,381 basehttp 24812 3004 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-18 13:20:49,392 basehttp 24812 24188 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-18 13:20:49,425 basehttp 24812 21664 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2682
+INFO 2025-10-18 13:20:49,458 basehttp 24812 14700 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2025-10-18 13:20:49,477 basehttp 24812 18356 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2025-10-18 13:20:49,486 basehttp 24812 23148 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17905
+INFO 2025-10-18 13:21:41,488 autoreload 21432 1448 Watching for file changes with StatReloader
+INFO 2025-10-18 13:21:43,380 basehttp 21432 3816 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4158
+INFO 2025-10-18 13:21:50,170 basehttp 21432 3816 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-18 13:21:50,193 basehttp 21432 3816 "GET /admin/ HTTP/1.1" 200 9207
+INFO 2025-10-18 13:21:50,413 basehttp 21432 3816 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-10-18 13:21:50,427 basehttp 21432 3816 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-18 13:21:50,430 basehttp 21432 9936 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-18 13:21:55,295 basehttp 21432 9936 "GET /admin/auth/user/ HTTP/1.1" 200 13384
+INFO 2025-10-18 13:21:55,380 basehttp 21432 9936 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6811
+INFO 2025-10-18 13:21:55,412 basehttp 21432 24336 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-18 13:21:55,416 basehttp 21432 9936 "GET /static/admin/js/actions.js HTTP/1.1" 200 8067
+INFO 2025-10-18 13:21:55,423 basehttp 21432 15692 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-18 13:21:55,432 basehttp 21432 3816 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-18 13:21:55,450 basehttp 21432 24336 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-18 13:21:55,475 basehttp 21432 3816 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-10-18 13:21:55,476 basehttp 21432 19252 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9042
+INFO 2025-10-18 13:21:55,486 basehttp 21432 24336 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-10-18 13:21:55,496 basehttp 21432 9936 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-18 13:21:55,531 basehttp 21432 24096 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-18 13:21:55,555 basehttp 21432 24096 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-18 13:21:55,630 basehttp 21432 15692 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-18 13:21:55,674 basehttp 21432 15692 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-18 13:21:55,681 basehttp 21432 24096 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-10-18 13:21:55,681 basehttp 21432 9936 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-10-18 13:22:03,429 basehttp 21432 9936 "GET /admin/api/user/ HTTP/1.1" 200 13747
+INFO 2025-10-18 13:22:03,485 basehttp 21432 9936 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-18 13:22:19,619 basehttp 21432 9936 "POST /admin/api/user/ HTTP/1.1" 200 9825
+INFO 2025-10-18 13:22:19,674 basehttp 21432 9936 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-10-18 13:22:21,108 basehttp 21432 9936 "POST /admin/api/user/ HTTP/1.1" 302 0
+INFO 2025-10-18 13:22:21,128 basehttp 21432 9936 "GET /admin/api/user/ HTTP/1.1" 200 11248
+INFO 2025-10-18 13:22:21,189 basehttp 21432 9936 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-18 13:22:36,831 basehttp 21432 9936 "GET /api/docs/ HTTP/1.1" 200 4641
+INFO 2025-10-18 13:22:37,170 basehttp 21432 9936 "GET /api/schema/ HTTP/1.1" 200 99294
+INFO 2025-10-18 13:23:14,882 basehttp 21432 2360 "POST /api/auth/register/ HTTP/1.1" 201 355
+INFO 2025-10-18 13:23:52,824 basehttp 21432 2360 "POST /api/auth/login/ HTTP/1.1" 200 460
+INFO 2025-10-18 13:24:13,620 basehttp 21432 2360 "GET /admin/ HTTP/1.1" 200 9884
+INFO 2025-10-18 13:24:13,804 basehttp 21432 2360 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-10-18 13:24:16,043 basehttp 21432 2360 "GET /admin/api/user/ HTTP/1.1" 200 13278
+INFO 2025-10-18 13:24:16,118 basehttp 21432 2360 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-18 13:30:05,270 log 21432 17480 Forbidden: /api/groups/
+WARNING 2025-10-18 13:30:05,272 basehttp 21432 17480 "POST /api/groups/ HTTP/1.1" 403 42
+INFO 2025-10-18 13:30:18,673 autoreload 21432 1448 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:30:20,839 autoreload 18876 24656 Watching for file changes with StatReloader
+INFO 2025-10-18 13:30:30,884 autoreload 18876 24656 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:30:33,058 autoreload 22588 16736 Watching for file changes with StatReloader
+INFO 2025-10-18 13:31:43,633 autoreload 14252 25256 Watching for file changes with StatReloader
+INFO 2025-10-18 13:32:17,984 autoreload 22588 16736 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:32:20,535 autoreload 19116 23840 Watching for file changes with StatReloader
+INFO 2025-10-18 13:36:15,545 autoreload 19116 23840 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\serializers.py changed, reloading.
+INFO 2025-10-18 13:36:19,325 autoreload 17636 11708 Watching for file changes with StatReloader
+INFO 2025-10-18 13:36:27,774 autoreload 17636 11708 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:36:31,160 autoreload 5596 17028 Watching for file changes with StatReloader
+INFO 2025-10-18 13:36:38,521 autoreload 5596 17028 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:36:42,712 autoreload 16060 23204 Watching for file changes with StatReloader
+INFO 2025-10-18 13:36:58,782 autoreload 25924 19560 Watching for file changes with StatReloader
+WARNING 2025-10-18 13:37:21,915 log 16060 4420 Unauthorized: /api/auth/login/
+WARNING 2025-10-18 13:37:21,918 basehttp 16060 4420 "POST /api/auth/login/ HTTP/1.1" 401 68
+INFO 2025-10-18 13:37:31,258 basehttp 16060 4420 - Broken pipe from ('127.0.0.1', 5005)
+INFO 2025-10-18 13:37:41,192 autoreload 16060 23204 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:37:41,495 autoreload 25924 19560 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:37:44,444 autoreload 19848 25928 Watching for file changes with StatReloader
+INFO 2025-10-18 13:37:45,048 autoreload 19392 17560 Watching for file changes with StatReloader
+INFO 2025-10-18 13:38:08,466 autoreload 19296 17244 Watching for file changes with StatReloader
+INFO 2025-10-18 13:38:16,077 basehttp 19296 24236 "GET /api/docs/ HTTP/1.1" 200 4641
+INFO 2025-10-18 13:38:16,939 basehttp 19296 24236 "GET /api/schema/ HTTP/1.1" 200 104153
+INFO 2025-10-18 13:38:43,759 basehttp 19296 24236 "POST /api/auth/login/ HTTP/1.1" 200 460
+ERROR 2025-10-18 13:39:15,489 log 19296 24236 Internal Server Error: /api/groups/
+Traceback (most recent call last):
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 421, in initial
+    self.check_permissions(request)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 338, in check_permissions
+    if not permission.has_permission(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\permissions.py", line 151, in has_permission
+    return bool(request.user and request.user.is_authenticated)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'is_authenticated'
+ERROR 2025-10-18 13:39:15,547 basehttp 19296 24236 "POST /api/groups/ HTTP/1.1" 500 22654
+INFO 2025-10-18 13:40:53,476 autoreload 19392 17560 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\models.py changed, reloading.
+INFO 2025-10-18 13:40:57,715 autoreload 4620 20224 Watching for file changes with StatReloader
+INFO 2025-10-18 13:41:11,701 autoreload 4620 20224 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:41:15,937 autoreload 24692 22240 Watching for file changes with StatReloader
+INFO 2025-10-18 13:41:48,630 autoreload 24692 22240 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:41:54,864 autoreload 19896 12352 Watching for file changes with StatReloader
+INFO 2025-10-18 13:42:08,383 autoreload 19896 12352 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:42:14,658 autoreload 23368 13128 Watching for file changes with StatReloader
+INFO 2025-10-18 13:42:35,324 autoreload 23140 11248 Watching for file changes with StatReloader
+INFO 2025-10-18 13:42:41,623 autoreload 23368 13128 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\models.py changed, reloading.
+INFO 2025-10-18 13:42:42,176 autoreload 23140 11248 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:42:44,713 autoreload 20060 20240 Watching for file changes with StatReloader
+INFO 2025-10-18 13:42:45,037 autoreload 21204 5128 Watching for file changes with StatReloader
+INFO 2025-10-18 13:43:08,730 autoreload 21828 7240 Watching for file changes with StatReloader
+INFO 2025-10-18 13:43:22,603 basehttp 21828 11320 "POST /api/groups/ HTTP/1.1" 201 823
+INFO 2025-10-18 13:43:43,585 basehttp 21828 11320 "GET /admin/api/group/ HTTP/1.1" 200 13047
+INFO 2025-10-18 13:43:43,705 basehttp 21828 11320 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,734 basehttp 21828 14236 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,746 basehttp 21828 22972 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,766 basehttp 21828 16604 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,768 basehttp 21828 14236 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,774 basehttp 21828 22972 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,776 basehttp 21828 25928 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,779 basehttp 21828 25900 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,781 basehttp 21828 14236 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,781 basehttp 21828 16604 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,796 basehttp 21828 25900 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,801 basehttp 21828 22972 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,804 basehttp 21828 11320 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-18 13:43:43,805 basehttp 21828 25928 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,852 basehttp 21828 11320 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,852 basehttp 21828 25928 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,887 basehttp 21828 11320 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,888 basehttp 21828 25928 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,906 basehttp 21828 25928 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,932 basehttp 21828 22972 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,958 basehttp 21828 11320 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:43,960 basehttp 21828 25928 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-10-18 13:43:45,700 basehttp 21828 25928 "GET /admin/api/groupmember/ HTTP/1.1" 200 12851
+INFO 2025-10-18 13:43:45,806 basehttp 21828 25928 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-18 13:47:18,596 autoreload 20060 20240 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\serializers.py changed, reloading.
+INFO 2025-10-18 13:47:18,614 autoreload 21828 7240 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\serializers.py changed, reloading.
+INFO 2025-10-18 13:47:18,686 autoreload 21204 5128 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\serializers.py changed, reloading.
+INFO 2025-10-18 13:47:23,587 autoreload 3304 9892 Watching for file changes with StatReloader
+INFO 2025-10-18 13:47:23,665 autoreload 11852 24676 Watching for file changes with StatReloader
+INFO 2025-10-18 13:47:23,966 autoreload 18180 22692 Watching for file changes with StatReloader
+INFO 2025-10-18 13:47:46,461 autoreload 11852 24676 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:47:46,951 autoreload 3304 9892 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:47:47,071 autoreload 18180 22692 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:47:50,884 autoreload 24520 5452 Watching for file changes with StatReloader
+INFO 2025-10-18 13:47:52,050 autoreload 23876 23812 Watching for file changes with StatReloader
+INFO 2025-10-18 13:47:52,493 autoreload 10424 15916 Watching for file changes with StatReloader
+INFO 2025-10-18 13:48:03,497 autoreload 23876 23812 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:48:03,608 autoreload 10424 15916 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:48:04,462 autoreload 24520 5452 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:48:07,537 autoreload 24952 24720 Watching for file changes with StatReloader
+INFO 2025-10-18 13:48:08,234 autoreload 26080 26604 Watching for file changes with StatReloader
+INFO 2025-10-18 13:48:08,573 autoreload 2740 25872 Watching for file changes with StatReloader
+INFO 2025-10-18 13:48:16,547 autoreload 24952 24720 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:48:16,970 autoreload 26080 26604 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:48:17,609 autoreload 2740 25872 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:48:20,538 autoreload 24708 18532 Watching for file changes with StatReloader
+INFO 2025-10-18 13:48:20,784 autoreload 6032 24820 Watching for file changes with StatReloader
+INFO 2025-10-18 13:48:21,455 autoreload 16548 25708 Watching for file changes with StatReloader
+INFO 2025-10-18 13:48:37,283 autoreload 22848 16976 Watching for file changes with StatReloader
+INFO 2025-10-18 13:49:15,481 autoreload 16548 25708 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\serializers.py changed, reloading.
+INFO 2025-10-18 13:49:15,512 autoreload 6032 24820 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:49:15,517 autoreload 24708 18532 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\serializers.py changed, reloading.
+INFO 2025-10-18 13:49:15,519 autoreload 22848 16976 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\serializers.py changed, reloading.
+INFO 2025-10-18 13:49:19,123 autoreload 13456 11164 Watching for file changes with StatReloader
+INFO 2025-10-18 13:49:19,230 autoreload 22580 23780 Watching for file changes with StatReloader
+INFO 2025-10-18 13:49:19,287 autoreload 19068 20864 Watching for file changes with StatReloader
+INFO 2025-10-18 13:49:19,420 autoreload 17132 24972 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:08,638 autoreload 20024 17572 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:50:08,699 autoreload 1888 14112 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:50:08,798 autoreload 13456 11164 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:50:08,814 autoreload 24164 7508 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:50:08,956 autoreload 20168 25836 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:50:09,081 autoreload 22580 23780 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:50:09,150 autoreload 17132 24972 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:50:09,187 autoreload 18508 10740 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:50:09,248 autoreload 19068 20864 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:50:09,513 autoreload 14252 25256 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:50:14,167 autoreload 24364 3364 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:14,745 autoreload 19812 7744 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:14,829 autoreload 20748 18788 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:14,910 autoreload 19648 23756 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:16,255 autoreload 22616 9928 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:18,913 autoreload 13552 3816 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:19,110 autoreload 2260 24932 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:20,514 autoreload 16944 22240 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:20,637 autoreload 17536 14204 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:22,113 autoreload 4508 2832 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:37,437 autoreload 17536 14204 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:50:37,911 autoreload 2260 24932 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:50:37,995 autoreload 4508 2832 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:50:38,185 autoreload 16944 22240 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:50:46,369 autoreload 25588 4620 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:46,788 autoreload 17204 23460 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:47,592 autoreload 5356 5896 Watching for file changes with StatReloader
+INFO 2025-10-18 13:50:48,690 autoreload 17136 5760 Watching for file changes with StatReloader
+INFO 2025-10-18 13:51:09,869 autoreload 25588 4620 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:51:09,933 autoreload 5356 5896 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:51:10,199 autoreload 17204 23460 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:51:10,463 autoreload 17136 5760 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:51:18,202 autoreload 1248 5204 Watching for file changes with StatReloader
+INFO 2025-10-18 13:51:18,625 autoreload 12488 17904 Watching for file changes with StatReloader
+INFO 2025-10-18 13:51:19,056 autoreload 17272 20640 Watching for file changes with StatReloader
+INFO 2025-10-18 13:51:20,039 autoreload 17636 17328 Watching for file changes with StatReloader
+INFO 2025-10-18 13:51:35,000 autoreload 12488 17904 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:51:35,001 autoreload 17272 20640 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:51:35,323 autoreload 17636 17328 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:51:35,712 autoreload 1248 5204 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:51:40,217 autoreload 21304 22192 Watching for file changes with StatReloader
+INFO 2025-10-18 13:51:40,515 autoreload 22124 15860 Watching for file changes with StatReloader
+INFO 2025-10-18 13:51:41,041 autoreload 24684 11736 Watching for file changes with StatReloader
+INFO 2025-10-18 13:51:41,375 autoreload 19252 23204 Watching for file changes with StatReloader
+INFO 2025-10-18 13:51:56,467 autoreload 24684 11736 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:51:56,475 autoreload 21304 22192 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:51:56,576 autoreload 19252 23204 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:51:56,724 autoreload 22124 15860 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:52:02,761 autoreload 22204 16944 Watching for file changes with StatReloader
+INFO 2025-10-18 13:52:02,994 autoreload 18168 5896 Watching for file changes with StatReloader
+INFO 2025-10-18 13:52:03,127 autoreload 24532 23460 Watching for file changes with StatReloader
+INFO 2025-10-18 13:52:03,221 autoreload 21800 14832 Watching for file changes with StatReloader
+INFO 2025-10-18 13:52:17,719 autoreload 21800 14832 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:52:17,993 autoreload 24532 23460 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:52:18,626 autoreload 22204 16944 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:52:18,862 autoreload 18168 5896 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:52:24,248 autoreload 17552 22592 Watching for file changes with StatReloader
+INFO 2025-10-18 13:52:25,115 autoreload 16512 23312 Watching for file changes with StatReloader
+INFO 2025-10-18 13:52:25,204 autoreload 21240 19392 Watching for file changes with StatReloader
+INFO 2025-10-18 13:52:26,241 autoreload 18872 17956 Watching for file changes with StatReloader
+INFO 2025-10-18 13:52:40,798 autoreload 21240 19392 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:52:40,914 autoreload 16512 23312 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:52:40,984 autoreload 17552 22592 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:52:41,178 autoreload 18872 17956 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:52:46,551 autoreload 20220 17072 Watching for file changes with StatReloader
+INFO 2025-10-18 13:52:46,682 autoreload 1448 21160 Watching for file changes with StatReloader
+INFO 2025-10-18 13:52:46,868 autoreload 25120 17008 Watching for file changes with StatReloader
+INFO 2025-10-18 13:52:47,196 autoreload 14124 26436 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:00,601 autoreload 20220 17072 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:53:00,790 autoreload 1448 21160 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:53:00,874 autoreload 25120 17008 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:53:01,025 autoreload 14124 26436 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:53:06,123 autoreload 1896 6128 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:06,273 autoreload 21388 3200 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:06,502 autoreload 2288 21796 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:06,948 autoreload 5736 16820 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:20,610 autoreload 1896 6128 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:53:20,769 autoreload 2288 21796 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:53:20,755 autoreload 21388 3200 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:53:21,231 autoreload 5736 16820 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:53:26,504 autoreload 20968 9624 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:27,649 autoreload 25388 20268 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:27,873 autoreload 26444 24280 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:27,992 autoreload 23976 21944 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:43,997 autoreload 16888 25240 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:52,491 autoreload 23976 21944 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:53:52,588 autoreload 25388 20268 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:53:52,663 autoreload 19812 7744 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:53:52,675 autoreload 20968 9624 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:53:52,982 autoreload 22616 9928 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:53:52,997 autoreload 24364 3364 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:53:53,043 autoreload 19648 23756 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:53:53,085 autoreload 20748 18788 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:53:53,197 autoreload 13552 3816 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:53:53,448 autoreload 26444 24280 C:\Users\Mokaya\Downloads\GitHub\Gawa\gawa_backend\settings.py changed, reloading.
+INFO 2025-10-18 13:53:54,725 autoreload 16888 25240 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:53:56,584 autoreload 17200 16544 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:57,110 autoreload 10444 22880 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:57,156 autoreload 25360 16288 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:57,268 autoreload 9536 10128 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:57,367 autoreload 1540 20692 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:57,587 autoreload 18132 20168 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:58,735 autoreload 10692 18580 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:58,878 autoreload 25120 1568 Watching for file changes with StatReloader
+INFO 2025-10-18 13:53:59,775 autoreload 19476 2916 Watching for file changes with StatReloader
+INFO 2025-10-18 13:54:00,672 autoreload 21188 18140 Watching for file changes with StatReloader
+INFO 2025-10-18 13:54:00,856 autoreload 4656 26456 Watching for file changes with StatReloader
+INFO 2025-10-18 13:54:13,360 autoreload 4656 26456 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:54:13,403 autoreload 25120 1568 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:54:13,425 autoreload 10692 18580 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:54:13,490 autoreload 19476 2916 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py changed, reloading.
+INFO 2025-10-18 13:54:17,305 autoreload 20876 22708 Watching for file changes with StatReloader
+INFO 2025-10-18 13:54:17,321 autoreload 19152 25764 Watching for file changes with StatReloader
+INFO 2025-10-18 13:54:17,383 autoreload 21348 13492 Watching for file changes with StatReloader
+INFO 2025-10-18 13:54:17,487 autoreload 2628 12752 Watching for file changes with StatReloader
+INFO 2025-10-18 13:54:27,167 autoreload 22284 6208 Watching for file changes with StatReloader
+INFO 2025-10-18 13:54:41,844 basehttp 22284 17164 "GET /api/docs/ HTTP/1.1" 200 4722
+INFO 2025-10-18 13:54:42,464 basehttp 22284 17164 "GET /api/schema/ HTTP/1.1" 200 84006
+WARNING 2025-10-18 13:55:38,281 log 22284 17164 Forbidden: /api/groups/
+WARNING 2025-10-18 13:55:38,283 basehttp 22284 17164 "POST /api/groups/ HTTP/1.1" 403 58
+INFO 2025-10-18 13:56:31,838 basehttp 22284 17164 "POST /api/auth/login/ HTTP/1.1" 200 897
+WARNING 2025-10-18 13:56:56,031 log 22284 17164 Forbidden: /api/groups/
+WARNING 2025-10-18 13:56:56,032 basehttp 22284 17164 "POST /api/groups/ HTTP/1.1" 403 42
+WARNING 2025-10-18 13:57:40,411 log 22284 17164 Forbidden: /api/groups/
+WARNING 2025-10-18 13:57:40,415 basehttp 22284 17164 "POST /api/groups/ HTTP/1.1" 403 42
+WARNING 2025-10-18 13:58:17,501 log 22284 17164 Forbidden: /api/groups/
+WARNING 2025-10-18 13:58:17,506 basehttp 22284 17164 "POST /api/groups/ HTTP/1.1" 403 42
+INFO 2025-10-18 13:59:11,541 autoreload 19152 25764 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:59:11,576 autoreload 2628 12752 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:59:11,588 autoreload 21348 13492 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:59:12,541 autoreload 20876 22708 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:59:18,823 autoreload 8840 20064 Watching for file changes with StatReloader
+INFO 2025-10-18 13:59:19,539 autoreload 8348 9784 Watching for file changes with StatReloader
+INFO 2025-10-18 13:59:19,585 autoreload 8048 26128 Watching for file changes with StatReloader
+INFO 2025-10-18 13:59:20,491 autoreload 18464 4508 Watching for file changes with StatReloader
+INFO 2025-10-18 13:59:31,329 autoreload 18464 4508 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:59:31,968 autoreload 8840 20064 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:59:32,087 autoreload 8348 9784 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:59:32,299 autoreload 8048 26128 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:59:38,616 autoreload 19500 4020 Watching for file changes with StatReloader
+INFO 2025-10-18 13:59:39,442 autoreload 11164 22588 Watching for file changes with StatReloader
+INFO 2025-10-18 13:59:40,015 autoreload 23148 26436 Watching for file changes with StatReloader
+INFO 2025-10-18 13:59:40,496 autoreload 24952 20512 Watching for file changes with StatReloader
+INFO 2025-10-18 13:59:50,991 autoreload 19500 4020 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:59:51,693 autoreload 11164 22588 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:59:51,953 autoreload 23148 26436 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:59:52,629 autoreload 24952 20512 C:\Users\Mokaya\Downloads\GitHub\Gawa\api\supabase_service.py changed, reloading.
+INFO 2025-10-18 13:59:56,981 autoreload 25116 2360 Watching for file changes with StatReloader
+INFO 2025-10-18 13:59:57,911 autoreload 3172 22592 Watching for file changes with StatReloader
+INFO 2025-10-18 13:59:58,020 autoreload 25716 19068 Watching for file changes with StatReloader
+INFO 2025-10-18 13:59:59,778 autoreload 26576 10208 Watching for file changes with StatReloader
+INFO 2025-10-18 14:00:31,965 autoreload 21020 17572 Watching for file changes with StatReloader
+INFO 2025-10-18 14:00:36,127 basehttp 21020 2300 "GET /api/docs/ HTTP/1.1" 200 4722
+INFO 2025-10-18 14:00:36,888 basehttp 21020 2300 "GET /api/schema/ HTTP/1.1" 200 84006
+WARNING 2025-10-18 14:01:01,790 log 21020 2300 Unauthorized: /api/auth/login/
+WARNING 2025-10-18 14:01:01,792 basehttp 21020 2300 "POST /api/auth/login/ HTTP/1.1" 401 68
+INFO 2025-10-18 14:01:11,884 basehttp 21020 2300 "POST /api/auth/login/ HTTP/1.1" 200 897
+INFO 2025-10-18 14:01:42,693 basehttp 21020 2300 "POST /api/groups/ HTTP/1.1" 201 823
+INFO 2025-10-18 14:02:21,486 basehttp 21020 2300 "POST /api/groups/ HTTP/1.1" 201 823
+ERROR 2025-10-18 14:03:50,693 log 21020 2300 Internal Server Error: /api/expenses/
+Traceback (most recent call last):
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Mokaya\Downloads\GitHub\Gawa\api\views.py", line 393, in create
+    share_amount = total_amount / len(participants_list)
+                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+decimal.DivisionByZero: [<class 'decimal.DivisionByZero'>]
+ERROR 2025-10-18 14:03:50,718 basehttp 21020 2300 "POST /api/expenses/ HTTP/1.1" 500 23064
+WARNING 2025-10-18 14:06:49,857 log 21020 2300 Bad Request: /api/expenses/
+WARNING 2025-10-18 14:06:49,858 basehttp 21020 2300 "POST /api/expenses/ HTTP/1.1" 400 73
+INFO 2025-10-18 14:07:02,600 basehttp 21020 2300 "POST /api/expenses/ HTTP/1.1" 201 966

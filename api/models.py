@@ -22,6 +22,22 @@ class User(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.email})"
+    
+    # Django authentication properties
+    @property
+    def is_authenticated(self):
+        """Always return True for authenticated users"""
+        return True
+    
+    @property
+    def is_anonymous(self):
+        """Always return False as this is not an anonymous user"""
+        return False
+    
+    @property
+    def is_active(self):
+        """Return True if user is active"""
+        return True
 
     def calculate_credit_score(self):
         """Calculate credit score based on payment history"""

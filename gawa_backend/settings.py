@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # Third-party apps
     'rest_framework',
     'corsheaders',
+    'drf_spectacular',
     # Local apps
     'api',
 ]
@@ -87,12 +88,29 @@ WSGI_APPLICATION = 'gawa_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# Use Supabase PostgreSQL if configured, otherwise fallback to SQLite
+if os.getenv('SUPABASE_DB_HOST'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('SUPABASE_DB_NAME', 'postgres'),
+            'USER': os.getenv('SUPABASE_DB_USER', 'postgres'),
+            'PASSWORD': os.getenv('SUPABASE_DB_PASSWORD'),
+            'HOST': os.getenv('SUPABASE_DB_HOST'),
+            'PORT': os.getenv('SUPABASE_DB_PORT', '5432'),
+            'OPTIONS': {
+                'sslmode': 'require',
+            }
+        }
     }
-}
+else:
+    # Fallback to SQLite for local development
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation
@@ -153,6 +171,37 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+# ============================================================================
+# drf-spectacular Configuration
+# ============================================================================
+
+SPECTACULAR_SETTINGS = {
+    'SCHEMA_PATH_PREFIX': '/api/',
+    'TITLE': 'Gawa API',
+    'DESCRIPTION': 'Fintech Platform for Payment Splitting & Credit Building',
+    'VERSION': '1.0.0',
+    'SERVE_PERMISSIONS': ['rest_framework.permissions.AllowAny'],
+    'SERVE_AUTHENTICATION': None,
+    'COERCE_DECIMAL_TO_STRING': True,
+    'SWAGGER_UI_SETTINGS': {
+        'deepLinking': True,
+        'persistAuthorization': True,
+        'displayOperationId': False,
+        'filter': True,
+    },
+    'COMPONENT_SPLIT_REQUEST': True,
+    'TAGS': [
+        {'name': 'Authentication', 'description': 'User registration and login'},
+        {'name': 'Users', 'description': 'User profile management'},
+        {'name': 'Groups', 'description': 'Group management for expense sharing'},
+        {'name': 'Expenses', 'description': 'Create and manage shared expenses'},
+        {'name': 'Payments', 'description': 'STK Push payments and tracking'},
+        {'name': 'Smart Split', 'description': 'AI-powered expense splitting suggestions'},
+        {'name': 'Webhooks', 'description': 'PayHero payment callbacks'},
     ],
 }
 
